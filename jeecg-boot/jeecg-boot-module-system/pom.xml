@@ -35,7 +35,13 @@
 			<groupId>org.jeecgframework.boot</groupId>
 			<artifactId>jeecg-boot-base-common</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>org.jeecgframework.boot</groupId>
+			<artifactId>jeecg-boot-module-mes</artifactId>
+			<version>1.0.0</version>
+		</dependency>
 	</dependencies>
+
 	
 	<build>
 		<plugins>

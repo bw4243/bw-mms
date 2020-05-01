@@ -55,6 +55,7 @@ public class SysMessageController extends JeecgController<SysMessage, ISysMessag
 		QueryWrapper<SysMessage> queryWrapper = QueryGenerator.initQueryWrapper(sysMessage, req.getParameterMap());
 		Page<SysMessage> page = new Page<SysMessage>(pageNo, pageSize);
 		IPage<SysMessage> pageList = sysMessageService.page(page, queryWrapper);
+		log.error("ccc");
         return Result.ok(pageList);
 	}
 

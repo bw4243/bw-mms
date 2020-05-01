@@ -16,7 +16,8 @@
 	<modules>
 		<module>jeecg-boot-base-common</module>
 		<module>jeecg-boot-module-system</module>
-	</modules>
+        <module>jeecg-boot-module-mes</module>
+    </modules>
 
 	<distributionManagement>
 	  	<repository>
@@ -376,6 +377,20 @@
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
 			 指定JDK编译版本 -->
+			<plugin>
+				<groupId>org.zeroturnaround</groupId>
+				<artifactId>jrebel-maven-plugin</artifactId>
+				<version>1.1.10</version>
+				<executions>
+					<execution>
+						<id>generate-rebel-xml</id>
+						<phase>process-resources</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
