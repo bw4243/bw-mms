@@ -43,6 +43,7 @@
         </template>
 
         <span slot="action" slot-scope="text, record">
+          <a @click="handleAdd" > 新建 </a>
           <a @click="handleEdit(record)">编辑</a>
 
           <a-divider type="vertical" />
@@ -81,7 +82,7 @@
     data () {
       return {
         title:"操作",
-        width:800,
+        width:1000,
         visible: false,
         description: 'mes_move_detail管理页面',
         confirmLoading: false,
@@ -121,32 +122,32 @@
             }
           },
           {
-            title:'移动单编号',
+            title:'入库单编号',
             align:"center",
             dataIndex: 'number'
           },
           {
-            title:'物料ID',
+            title:'物料',
             align:"center",
             dataIndex: 'materialId_dictText'
           },
           {
-            title:'companyId',
+            title:'供应商',
             align:"center",
             dataIndex: 'companyId_dictText'
           },
           {
-            title:'planQuantity',
+            title:'计划数量',
             align:"center",
             dataIndex: 'planQuantity'
           },
           {
-            title:'quantity',
+            title:'数量',
             align:"center",
             dataIndex: 'quantity'
           },
           {
-            title:'状态：1：初始提交；2：审核中；3：审核通过；4：审核未通过；5：已完成；',
+            title:'状态',
             align:"center",
             dataIndex: 'status_dictText'
           },
@@ -206,6 +207,16 @@
           }
           this.loading = false;
         })
+      },
+      handleEdit: function (record) {
+        this.$refs.modalForm.edit(record);
+        this.$refs.modalForm.title = "编辑";
+        this.$refs.modalForm.disableSubmit = false;
+      },
+      handleAdd: function () {
+        this.$refs.modalForm.add();
+        this.$refs.modalForm.title = "新增";
+        this.$refs.modalForm.disableSubmit = false;
       },
       onSelectChange(selectedRowKeys, selectionRows) {
         this.selectedRowKeys = selectedRowKeys;

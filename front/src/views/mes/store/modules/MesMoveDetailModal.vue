@@ -16,17 +16,18 @@
         <a-form-item label="物料ID" :labelCol="labelCol" :wrapperCol="wrapperCol">
           <j-dict-select-tag type="list" v-decorator="['materialId', validatorRules.materialId]" :trigger-change="true" dictCode="mes_material,name,id" placeholder="请选择物料ID"/>
         </a-form-item>
-        <a-form-item label="companyId" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-dict-select-tag type="list" v-decorator="['companyId', validatorRules.companyId]" :trigger-change="true" dictCode="mes_company,name,id" placeholder="请选择companyId"/>
+        <a-form-item label="公司" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag type="list" v-decorator="['companyId', validatorRules.companyId]" :trigger-change="true" dictCode="mes_company,name,id" placeholder="请选择这"/>
         </a-form-item>
-        <a-form-item label="planQuantity" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input-number v-decorator="[ 'planQuantity', validatorRules.planQuantity]" placeholder="请输入planQuantity" style="width: 100%"/>
+        <a-form-item label="计划数量" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number v-decorator="[ 'planQuantity', validatorRules.planQuantity]" placeholder="请输入计划数量" style="width: 100%"/>
         </a-form-item>
-        <a-form-item label="quantity" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <a-input-number v-decorator="[ 'quantity', validatorRules.quantity]" placeholder="请输入quantity" style="width: 100%"/>
+        <a-form-item label="实际数量" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <a-input-number v-decorator="[ 'quantity', validatorRules.quantity]" placeholder="请输入实际数量" style="width: 100%"/>
         </a-form-item>
-        <a-form-item label="状态：1：初始提交；2：审核中；3：审核通过；4：审核未通过；5：已完成；" :labelCol="labelCol" :wrapperCol="wrapperCol">
-          <j-multi-select-tag type="list_multi" v-decorator="['status', validatorRules.status]" :trigger-change="true" dictCode="storage_in_order_status" placeholder="请选择状态：1：初始提交；2：审核中；3：审核通过；4：审核未通过；5：已完成；"/>
+        <a-form-item label="状态：" :labelCol="labelCol" :wrapperCol="wrapperCol">
+          <j-dict-select-tag :triggerChange="true"  v-decorator="[ 'status', validatorRules.status]" placeholder="请选择状态" 
+          dictCode="storage_in_order_status"/>
         </a-form-item>
 
       </a-form>
